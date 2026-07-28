@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yolanda Services - Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #111;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #000;
+            color: #ff2f92;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            box-shadow: 0 3px 10px rgba(255, 20, 147, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* LOGO STYLES FOR IMAGE */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff2f92;
+        }
+
+        .nav-btn {
+            background: #ff2f92;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: #ff2f92;
+        }
+
+        .hero {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+                        url("https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            color: #ff2f92;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            width: 70%;
+            max-width: 800px;
+            font-size: 22px;
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            background: #ff2f92;
+            color: white;
+            border: 2px solid #ff2f92;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #ff2f92;
+            border-color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #111;
+        }
+
+        .services {
+            padding: 80px 40px;
+            text-align: center;
+            background: #0a0a0a;
+        }
+
+        .services h2 {
+            color: #ff2f92;
+            margin-bottom: 40px;
+            font-size: 40px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #1c1c1c;
+            width: 300px;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #ff2f92;
+            transition: 0.3s;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px #ff2f92;
+        }
+
+        .card h3 {
+            color: #ff2f92;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #ccc;
+            font-size: 15px;
+        }
+
+        .contact-section {
+            background: #181818;
+            padding: 80px 40px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .contact-section h2 {
+            color: #ff2f92;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 25px 20px;
+            color: #aaa;
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                width: 100%;
+                font-size: 18px;
+            }
+
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="yolanda-logo.png" alt="Yolanda Services Logo" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact" class="nav-btn">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Excellence. Experience. Impact.</h1>
+            <p>
+                Welcome to Yolanda Services — providing modern operational solutions across customer support, system infrastructure, and experience management.
+            </p>
+            <div class="hero-btns">
+                <a href="about.html" class="btn">Learn About Us</a>
+                <a href="#services" class="btn btn-outline">Explore Services</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Customer Support</h3>
+                    <p>Professional customer support and engagement infrastructure built for scale.</p>
+                </div>
+                <div class="card">
+                    <h3>Call Reports</h3>
+                    <p>Create, manage, and monitor real-time daily call logs and operational reports.</p>
+                </div>
+                <div class="card">
+                    <h3>Analytics</h3>
+                    <p>Track performance and customer engagement using live data charts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Get in Touch</h2>
+            <p>Ready to streamline your operational support?</p>
+            <a href="mailto:contact@yolanda.com" class="btn">Talk to Us</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Yolanda Services. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

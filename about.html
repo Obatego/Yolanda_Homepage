@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Yolanda Services</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #111;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #000;
+            color: #ff2f92;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            box-shadow: 0 3px 10px rgba(255, 20, 147, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* LOGO STYLES FOR IMAGE */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff2f92;
+        }
+
+        .nav-btn {
+            background: #ff2f92;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: #ff2f92;
+        }
+
+        .about-hero {
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+                        url("https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-hero h1 {
+            font-size: 52px;
+            color: #ff2f92;
+            margin-bottom: 15px;
+        }
+
+        .about-hero p {
+            width: 70%;
+            max-width: 800px;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .story-section {
+            padding: 80px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .story-section h2 {
+            color: #ff2f92;
+            font-size: 36px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .story-section p {
+            font-size: 18px;
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .mv-container {
+            background: #0a0a0a;
+            padding: 80px 40px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .mv-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mv-card {
+            background: #1c1c1c;
+            flex: 1 1 450px;
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #ff2f92;
+            transition: .3s;
+        }
+
+        .mv-card:hover {
+            box-shadow: 0 0 20px rgba(255, 47, 146, 0.4);
+        }
+
+        .mv-card h3 {
+            color: #ff2f92;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .mv-card p {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .contact-section {
+            background: #181818;
+            padding: 80px 40px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .contact-section h2 {
+            color: #ff2f92;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            background: #ff2f92;
+            color: white;
+            border: 2px solid #ff2f92;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #ff2f92;
+            border-color: white;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 25px 20px;
+            color: #aaa;
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .about-hero h1 {
+                font-size: 36px;
+            }
+
+            .about-hero p {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .mv-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="yolanda-logo.png" alt="Yolanda Services Logo" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="#contact" class="nav-btn">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1>About Yolanda System</h1>
+            <p>
+                Behind the scenes of modern operational solutions built for seamless communication, customer support, and system management.
+            </p>
+        </section>
+
+        <section class="story-section">
+            <h2>Who We Are</h2>
+            <p>
+                Yolanda Services is built to streamline operations, customer support workflows, and digital interactions in real time. We bridge customer needs with actionable operational data.
+            </p>
+            <p>
+                Whether managing daily agent logs, generating automated call reports, or reviewing system analytics, our platform offers the structure needed to keep your business running efficiently.
+            </p>
+        </section>
+
+        <section class="mv-container">
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <h3>Our Mission</h3>
+                    <p>
+                        To deliver reliable and intuitive operational platforms that simplify customer communication, empower teams, and turn operational data into clear, actionable insights.
+                    </p>
+                </div>
+
+                <div class="mv-card">
+                    <h3>Our Vision</h3>
+                    <p>
+                        To become the primary infrastructure standard for scalable digital outreach, service management, and real-time support analytics.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Get in Touch</h2>
+            <p>Have questions about integrating Yolanda Services into your system?</p>
+            <a href="mailto:contact@yolanda.com" class="btn">Reach Out Today</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Yolanda Services. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
