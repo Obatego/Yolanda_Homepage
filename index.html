@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yolanda Services - Home</title>
+    <title>Yolanda Services | Customer Support & Catering Solutions</title>
 
     <style>
         * {
@@ -33,7 +33,6 @@
             z-index: 1000;
         }
 
-        /* LOGO STYLES FOR IMAGE */
         .logo-link {
             display: flex;
             align-items: center;
@@ -80,30 +79,47 @@
             color: #ff2f92;
         }
 
+        /* HERO SECTION */
         .hero {
-            height: 90vh;
+            min-height: 85vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
                         url("https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600");
             background-size: cover;
             background-position: center;
         }
 
-        .hero h1 {
-            font-size: 60px;
+        .hero-tag {
             color: #ff2f92;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            color: #ff2f92;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+            color: white;
             margin-bottom: 20px;
+            font-weight: normal;
         }
 
         .hero p {
-            width: 70%;
+            width: 80%;
             max-width: 800px;
-            font-size: 22px;
+            font-size: 19px;
             line-height: 1.7;
             color: #ddd;
         }
@@ -147,22 +163,69 @@
             color: #111;
         }
 
-        .services {
-            padding: 80px 40px;
-            text-align: center;
+        /* METRICS BAR */
+        .value-bar {
             background: #0a0a0a;
+            padding: 40px 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
         }
 
-        .services h2 {
-            color: #ff2f92;
-            margin-bottom: 40px;
-            font-size: 40px;
-        }
-
-        .cards {
+        .value-grid {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 25px;
+            text-align: center;
+        }
+
+        .value-item {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .value-item .highlight {
+            font-size: 26px;
+            font-weight: bold;
+            color: #ff2f92;
+            margin-bottom: 5px;
+        }
+
+        .value-item p {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        /* SERVICES PREVIEW */
+        .services-section {
+            padding: 80px 40px;
+            background: #111;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            color: #ff2f92;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        .cards-grid {
+            display: flex;
             gap: 30px;
+            justify-content: center;
             flex-wrap: wrap;
             max-width: 1200px;
             margin: 0 auto;
@@ -170,44 +233,103 @@
 
         .card {
             background: #1c1c1c;
-            width: 300px;
-            padding: 30px;
+            flex: 1 1 450px;
+            padding: 40px;
             border-radius: 15px;
             border: 2px solid #ff2f92;
-            transition: 0.3s;
-            text-align: left;
+            transition: .3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px #ff2f92;
+            box-shadow: 0 0 20px rgba(255, 47, 146, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .line-badge {
+            display: inline-block;
+            background: rgba(255, 47, 146, 0.15);
+            color: #ff2f92;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border: 1px solid #ff2f92;
+            width: fit-content;
         }
 
         .card h3 {
-            color: #ff2f92;
+            color: white;
+            font-size: 24px;
             margin-bottom: 15px;
-            font-size: 22px;
         }
 
         .card p {
             color: #ccc;
-            font-size: 15px;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 25px;
         }
 
-        .contact-section {
+        .card-link {
+            color: #ff2f92;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .card-link:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        /* ABOUT PREVIEW SECTION */
+        .about-preview {
+            padding: 80px 40px;
             background: #181818;
+            border-top: 1px solid #222;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            color: #ff2f92;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: #0a0a0a;
             padding: 80px 40px;
             text-align: center;
             border-top: 1px solid #222;
         }
 
-        .contact-section h2 {
+        .cta-section h2 {
             color: #ff2f92;
             font-size: 38px;
             margin-bottom: 15px;
         }
 
-        .contact-section p {
+        .cta-section p {
             color: #ccc;
             margin-bottom: 30px;
             font-size: 18px;
@@ -241,13 +363,17 @@
                 font-size: 38px;
             }
 
+            .hero h2 {
+                font-size: 20px;
+            }
+
             .hero p {
                 width: 100%;
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .card {
-                width: 100%;
+                padding: 25px;
             }
         }
     </style>
@@ -262,45 +388,90 @@
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact" class="nav-btn">Contact</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html" class="nav-btn">Get in touch</a>
         </nav>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
-            <h1>Excellence. Experience. Impact.</h1>
+            <span class="hero-tag">Yolanda Services</span>
+            <h1>Yolanda Services</h1>
+            <h2>Two crafts. One standard of service.</h2>
             <p>
-                Welcome to Yolanda Services — providing modern operational solutions across customer support, system infrastructure, and experience management.
+                We run the conversations that keep a business reachable, and the tables that keep a room remembered. From call centers to celebrations, we build the operations behind the moments that matter.
             </p>
             <div class="hero-btns">
-                <a href="about.html" class="btn">Learn About Us</a>
-                <a href="#services" class="btn btn-outline">Explore Services</a>
+                <a href="services.html" class="btn">Explore Our Services</a>
+                <a href="contact.html" class="btn btn-outline">Talk to Us</a>
             </div>
         </section>
 
-        <section id="services" class="services">
-            <h2>Our Services</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Customer Support</h3>
-                    <p>Professional customer support and engagement infrastructure built for scale.</p>
+        <!-- Metrics Bar -->
+        <section class="value-bar">
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="highlight">Two Service Lines</div>
+                    <p>One operator with shared DNA across operations</p>
                 </div>
-                <div class="card">
-                    <h3>Call Reports</h3>
-                    <p>Create, manage, and monitor real-time daily call logs and operational reports.</p>
+                <div class="value-item">
+                    <div class="highlight">$1M Target</div>
+                    <p>Income-generation target across our service portfolio</p>
                 </div>
-                <div class="card">
-                    <h3>Analytics</h3>
-                    <p>Track performance and customer engagement using live data charts.</p>
+                <div class="value-item">
+                    <div class="highlight">End-to-End Setup</div>
+                    <p>We build the system, not just the moment</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <h2>Get in Touch</h2>
-            <p>Ready to streamline your operational support?</p>
-            <a href="mailto:contact@yolanda.com" class="btn">Talk to Us</a>
+        <!-- Services Preview Section -->
+        <section class="services-section">
+            <div class="section-header">
+                <h2>Our Business Lines</h2>
+                <p>Designed to support your customers and host your guests.</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Line One Card -->
+                <div class="card">
+                    <div>
+                        <span class="line-badge">Line One</span>
+                        <h3>Customer Support & Call Center Solutions</h3>
+                        <p>We set up and run complete communication operations including floor plans, live agents, bulk SMS campaigns, and automated voice outreach.</p>
+                    </div>
+                    <a href="services.html#line1" class="card-link">Learn More About Line One →</a>
+                </div>
+
+                <!-- Line Two Card -->
+                <div class="card">
+                    <div>
+                        <span class="line-badge">Line Two</span>
+                        <h3>Catering, Hospitality & Sales</h3>
+                        <p>We deliver full event planning, crowd meal preparations for large gatherings, and secure financial exchange services like Espees swaps.</p>
+                    </div>
+                    <a href="services.html#line2" class="card-link">Learn More About Line Two →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Preview Section -->
+        <section class="about-preview">
+            <div class="about-content">
+                <h2>Built for Scale & Precision</h2>
+                <p>
+                    Whether you need to manage thousands of customer inquiries or cater high-volume gatherings, Yolanda Services sets up the operations, staffs the execution, and delivers measurable outcomes.
+                </p>
+                <a href="about.html" class="btn btn-outline">Read Our Full Story</a>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Tell us about your project requirements and let's build your operational solution together.</p>
+            <a href="contact.html" class="btn">Get in Touch</a>
         </section>
     </main>
 
