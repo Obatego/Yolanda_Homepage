@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Yolanda Services</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #111;
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #000;
+            color: #ff2f92;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            box-shadow: 0 3px 10px rgba(255, 20, 147, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff2f92;
+        }
+
+        .nav-btn {
+            background: #ff2f92;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: #ff2f92;
+        }
+
+        /* 404 CONTENT STYLES */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+                        url("https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .error-card {
+            background: #1c1c1c;
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 2px solid #ff2f92;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 0 30px rgba(255, 47, 146, 0.2);
+        }
+
+        .error-code {
+            font-size: 96px;
+            font-weight: bold;
+            color: #ff2f92;
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(255, 47, 146, 0.5);
+        }
+
+        .error-card h1 {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .error-card p {
+            color: #aaa;
+            font-size: 17px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .quick-links {
+            margin-bottom: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .quick-links span {
+            display: block;
+            color: #ddd;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .links-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .quick-link-item {
+            color: #ff2f92;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .quick-link-item:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #ff2f92;
+            color: white;
+            border: 2px solid #ff2f92;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #ff2f92;
+            border-color: white;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 25px 20px;
+            color: #aaa;
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .error-code {
+                font-size: 72px;
+            }
+
+            .error-card h1 {
+                font-size: 22px;
+            }
+
+            .error-card {
+                padding: 35px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="yolanda-logo.png" alt="Yolanda Services Logo" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html" class="nav-btn">Get in touch</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="error-card">
+            <div class="error-code">404</div>
+            <h1>Page Not Found</h1>
+            <p>The page you are looking for might have been moved, renamed, or is temporarily unavailable.</p>
+
+            <div class="quick-links">
+                <span>Or explore these pages:</span>
+                <div class="links-grid">
+                    <a href="index.html" class="quick-link-item">Home</a>
+                    <a href="about.html" class="quick-link-item">About Us</a>
+                    <a href="services.html" class="quick-link-item">Services</a>
+                    <a href="contact.html" class="quick-link-item">Contact</a>
+                </div>
+            </div>
+
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Yolanda Services. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
