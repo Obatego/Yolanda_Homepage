@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yolanda Services - Our Services</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #111;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #000;
+            color: #ff2f92;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            box-shadow: 0 3px 10px rgba(255, 20, 147, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff2f92;
+        }
+
+        .nav-btn {
+            background: #ff2f92;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: #ff2f92;
+        }
+
+        /* PAGE HERO */
+        .hero {
+            padding: 90px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+                        url("https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600");
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            color: #ff2f92;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            width: 75%;
+            max-width: 850px;
+            font-size: 19px;
+            line-height: 1.7;
+            color: #ccc;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* METRICS & VALUE PROP BAR */
+        .value-bar {
+            background: #0a0a0a;
+            padding: 40px 20px;
+            border-bottom: 1px solid #222;
+        }
+
+        .value-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 25px;
+            text-align: center;
+        }
+
+        .value-item {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .value-item .highlight {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff2f92;
+            margin-bottom: 5px;
+        }
+
+        .value-item p {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        /* SERVICES SECTIONS */
+        .services-section {
+            padding: 80px 40px;
+            background: #111;
+        }
+
+        .services-section.alt-bg {
+            background: #0a0a0a;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .line-badge {
+            display: inline-block;
+            background: rgba(255, 47, 146, 0.15);
+            color: #ff2f92;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border: 1px solid #ff2f92;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-desc {
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #1c1c1c;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #ff2f92;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px #ff2f92;
+        }
+
+        .card-num {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff2f92;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #ccc;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* WHY US / FEATURES */
+        .why-us {
+            padding: 80px 40px;
+            background: #141414;
+            border-top: 1px solid #222;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .why-card {
+            background: #1c1c1c;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        .why-card h4 {
+            color: #ff2f92;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .why-card p {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        /* BUTTON STYLES */
+        .btn {
+            padding: 14px 32px;
+            background: #ff2f92;
+            color: white;
+            border: 2px solid #ff2f92;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #ff2f92;
+            border-color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #111;
+        }
+
+        /* CONTACT CTA */
+        .contact-section {
+            background: #181818;
+            padding: 80px 40px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .contact-section h2 {
+            color: #ff2f92;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 25px 20px;
+            color: #aaa;
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                width: 100%;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="yolanda-logo.png" alt="Yolanda Services Logo" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="#contact" class="nav-btn">Get in touch</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Yolanda Services</h1>
+            <h2>Two crafts. One standard of service.</h2>
+            <p>
+                Yolanda Services runs the conversations that keep a business reachable, and the tables that keep a room remembered. From call centers to celebrations, we build the operations behind the moments that matter to your customers and your guests.
+            </p>
+            <div class="hero-btns">
+                <a href="#line-one" class="btn">Explore Our Services</a>
+                <a href="#contact" class="btn btn-outline">Talk to Us</a>
+            </div>
+        </section>
+
+        <!-- Key Metrics Bar -->
+        <section class="value-bar">
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="highlight">Two Service Lines</div>
+                    <p>One operator with shared DNA across operations</p>
+                </div>
+                <div class="value-item">
+                    <div class="highlight">$1M Target</div>
+                    <p>Income-generation target across our service portfolio</p>
+                </div>
+                <div class="value-item">
+                    <div class="highlight">End-to-End Setup</div>
+                    <p>We build the system, not just the moment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Line One Section -->
+        <section id="line-one" class="services-section">
+            <div class="section-header">
+                <span class="line-badge">Line One</span>
+                <h2 class="section-title">Customer Support & Call Center Solutions</h2>
+                <p class="section-desc">We set up and run the communication infrastructure that keeps you connected to every customer, at scale.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-num">01</div>
+                    <h3>Call Center Set-up</h3>
+                    <p>From initial floor plan layout to live agent integration, built custom for your communication volume.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-num">02</div>
+                    <h3>Bulk Calling Support</h3>
+                    <p>Outbound calling infrastructure designed to reach large customer lists efficiently and systematically.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-num">03</div>
+                    <h3>Automated Calling</h3>
+                    <p>Streamlined voice automation systems for timely reminders, urgency alerts, and routine outreach.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-num">04</div>
+                    <h3>Bulk SMS Campaigns</h3>
+                    <p>Fast, direct, high-deliverability SMS messaging channels for instant customer notifications.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-num">05</div>
+                    <h3>Support Desk Set-up</h3>
+                    <p>Complete front-line customer desk infrastructure, with agents fully trained and ready to represent your brand.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Line Two Section -->
+        <section id="line-two" class="services-section alt-bg">
+            <div class="section-header">
+                <span class="line-badge">Line Two</span>
+                <h2 class="section-title">Catering, Hospitality & Sales</h2>
+                <p class="section-desc">We plan, cook, and manage the experiences your guests remember — and the sales that support them.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-num">01</div>
+                    <h3>Event Management</h3>
+                    <p>Full-scope setup and structural event management, guiding your gathering from planning through execution.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-num">02</div>
+                    <h3>Crowd Meals</h3>
+                    <p>Scalable catering operations purpose-built to serve large crowds without compromising quality or speed.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-num">03</div>
+                    <h3>Espees Swap Services</h3>
+                    <p>Specialized transaction exchange services handled securely, smoothly, and efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Yolanda Section -->
+        <section class="why-us">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #ff2f92;">Why Yolanda</h2>
+                <p class="section-desc">One team, two disciplines, no gaps</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <h4>End-to-End Set-up</h4>
+                    <p>We don't hand you a template and walk away. From call center infrastructure to event floor plans, we build the whole system, staff it, and stay on it.</p>
+                </div>
+
+                <div class="why-card">
+                    <h4>Scale on Demand</h4>
+                    <p>Bulk calls, bulk SMS, and crowd meals are built for volume — whether that's thousands of customers or hundreds of guests.</p>
+                </div>
+
+                <div class="why-card">
+                    <h4>Two Teams, One Standard</h4>
+                    <p>Our support and hospitality lines run on the exact same principle: be clear, be reliable, be there.</p>
+                </div>
+
+                <div class="why-card">
+                    <h4>Growth-Minded</h4>
+                    <p>Every engagement is built toward measurable outcomes — including our own goal of $1M in income generation across both lines.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section id="contact" class="contact-section">
+            <h2>Ready to Run Your Line or Guest List?</h2>
+            <p>Whichever line you engage us for, we set up the system and run it with you.</p>
+            <a href="mailto:contact@yolanda.com" class="btn">Talk to Us</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Yolanda Services. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
