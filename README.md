@@ -1,13 +1,14 @@
-Yolanda Services frontend-first application.
+YOLANDA SERVICES — VERIFIED COMPLETE FRONTEND
 
-Files:
-- index.html: existing Yolanda homepage preserved, plus 3D intro and Employee Portal link.
-- login.html: mock employee authentication.
-- employee-profile.html: profile + official Yolanda Call/Message Report form.
-- dashboard.html: KPI cards, Chart.js analytics, report table/filtering.
-- portal.css / portal.js: portal UI and mock frontend logic.
-- BACKEND_API_CONTRACT.json: backend endpoints and report fields.
+Open index.html for the public website.
+Employee Portal: index.html → login.html → dashboard.html / employee-profile.html.
 
-Demo: employee@yolanda.test / Yolanda123! (Employee ID: YOL-001)
+Demo login:
+Email/ID: employee@yolanda.test or YOL-001
+Password: Yolanda123!
 
-The frontend currently uses localStorage as a temporary mock data layer. Replace those calls with the API endpoints in BACKEND_API_CONTRACT.json when the backend is built.
+All pages share css/yolanda.css and the Yolanda visual system.
+Images are in assets/.
+Backend integration points are documented in backend/API-CONTRACT.json.
+
+Prototype report data is stored locally in localStorage until a real backend is connected.
